@@ -1,5 +1,6 @@
 The `tuned` folder is `/etc/tuned`
-`dbus-send` and `scx_loader` are required for these profiles to work
+`dbus-send`, [`scx_loader`](https://github.com/sched-ext/scx/tree/main/rust/scx_loader), `tuned`, and `tuned-ppd` are required for these profiles to work.
+If your desktop environment does not support power-profiles-daemon or you do not have a 3rd party app to control power profiles, this will do nothing.
 
 ### By default, the config exhibits the following behaviour with tuned's power-profiles-daemon:
 **Balanced:** the `scx-balanced` profile overlaid on the default `balanced` profile
@@ -19,5 +20,16 @@ The `tuned` folder is `/etc/tuned`
 **scx-performance:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--performance` flag
 
 **scx-powersave:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--powersave` flag
+
+### Customization
+Each CPU scheduler and its flags are defined in the `.sh` file in each profile using dbus.
+`org.scx.Loader.SwitchSchedulerWithArgs` takes two arguments: a string, and an array. The first string is the scheduler, and the array is an array of strings that make up its arguments.
+You can also use `org.scx.Loader.SwitchScheduler` if the scheduler takes no arguments.
+
+#### Examples:
+```dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.SwitchSchedulerWithArgs string:scx_bpfland array:string:"-p","-s","5000"
+```
+```dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.SwitchScheduler string:scx_rusty
+```
 
 
