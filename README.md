@@ -1,4 +1,4 @@
-The `tuned` folder is `/etc/tuned`
+The `tuned` directory is `/etc/tuned`
 
 [`dbus-send`](https://dbus.freedesktop.org/doc/dbus-send.1.html), [`scx_loader`](https://github.com/sched-ext/scx/tree/main/rust/scx_loader), [`tuned`](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/monitoring_and_managing_system_status_and_performance/getting-started-with-tuned_monitoring-and-managing-system-status-and-performance), and `tuned-ppd` are required for these profiles to work.
 If your desktop environment does not support power-profiles-daemon or you do not have a 3rd party app to control power profiles, this will do nothing.
@@ -30,10 +30,12 @@ Each CPU scheduler and its flags are defined in the `.sh` file in each profile u
 You can also use `org.scx.Loader.SwitchScheduler` if the scheduler takes no arguments.
 
 #### Examples:
+`scx_bpfland` with the arguments `-p -s 5000`
 ```sh
 dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.SwitchSchedulerWithArgs string:scx_bpfland array:string:"-p","-s","5000"
 ```
 
+`scx_rusty` with no arguments
 ```sh
 dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.SwitchScheduler string:scx_rusty
 ```
