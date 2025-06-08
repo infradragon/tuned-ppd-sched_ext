@@ -1,6 +1,7 @@
 The `tuned` directory is `/etc/tuned`
 
 [`dbus-send`](https://dbus.freedesktop.org/doc/dbus-send.1.html), [`scx_loader`](https://github.com/sched-ext/scx/tree/main/rust/scx_loader), [`tuned`](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/monitoring_and_managing_system_status_and_performance/getting-started-with-tuned_monitoring-and-managing-system-status-and-performance), and `tuned-ppd` are required for these profiles to work.
+
 If your desktop environment does not support power-profiles-daemon or you do not have a 3rd party app that uses power-profiles-daemon, this will do nothing useful (unless you just want your sched_ext scheduler to be loaded by tuned).
 
 ### By default, the config exhibits the following behaviour with tuned's power-profiles-daemon:
