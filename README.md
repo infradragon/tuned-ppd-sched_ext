@@ -12,12 +12,12 @@ The `tuned` folder is `/etc/tuned`
 
 
 ### Included profiles:
-**scx-balanced:** (scx_lavd)[https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd] with the `--autopilot` flag
+**scx-balanced:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--autopilot` flag
 
-**scx-balanced-battery:** (scx_lavd)[https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd] with the `--autopilot` flag
+**scx-balanced-battery:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--autopilot` flag
 
-**scx-performance:** (scx_lavd)[https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd] with the `--performance` flag
+**scx-performance:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--performance` flag
 
-**scx-powersave:** (scx_lavd)[https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd] with the `--powersave` flag
+**scx-powersave:** [scx_lavd](https://github.com/sched-ext/scx/tree/main/scheds/rust/scx_lavd) with the `--powersave` flag
 
 
